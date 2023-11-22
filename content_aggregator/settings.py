@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # Third-part apps
     'django_apscheduler',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -147,5 +148,9 @@ LOGGING = {
             'handlers': ['console'],
             'level': 'INFO',
             },
+        }
+#bootstrap3 settings
+BOOTSTRAP3 = {
+        'include_jquery': True,
         }
         
