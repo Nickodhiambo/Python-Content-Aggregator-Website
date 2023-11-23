@@ -42,15 +42,15 @@ class EpisodeTest(TestCase):
 
     def test_home_page_uses_correct_template(self):
         """Tests tha correct template for home page is rendered"""
-        response = self.client.get(reverse("index"))
+        response = self.client.get(reverse('episodes:index'))
         self.assertTemplateUsed(response, 'index.html')
 
     def test_podcast_page_uses_correct_template(self):
         """Tests that correct template for podcast page is rendered"""
-        response = self.client.get(reverse("podcasts"))
+        response = self.client.get(reverse('episodes:podcasts'))
         self.assertTemplateUsed(response, "episodes.html")
 
     def test_podcasts_page_list_content(self):
         """Tests that podcasts page displayed retrieved data"""
-        response = self.client.get(reverse('podcasts'))
+        response = self.client.get(reverse('episodes:podcasts'))
         self.assertContains(response, 'My first episode')

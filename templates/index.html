@@ -20,16 +20,18 @@
     <!--static navbar-->
       <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-          <div class="nav navbar-nav navbar-right">
-            <button type="button" class="navbar-toggle collapsed"
-	      data-toggle="collapse" data-target="#navbar"
-	      aria-expanded="false" aria-controls="navbar">
-	    </button>
-	    <h1>
-              <a class="navbar-brand" href="{% url 'episodes:index' %}">Home</a>
-	      <a class="navbar-brand" href="{% url 'episodes:podcasts' %}">Podcasts</a>
-	    </h1>
-          </div><!--/.nav-collapse -->
+		<div class="row">
+                  <div class="nav navbar-nav navbar-right">
+                    <button type="button" class="navbar-toggle collapsed"
+	              data-toggle="collapse" data-target="#navbar"
+	              aria-expanded="false" aria-controls="navbar">
+	            </button>
+		    <h1>
+                      <a class="navbar-brand" href="{% url 'episodes:index' %}">Home</a>
+	              <a class="navbar-brand" href="{% url 'episodes:podcasts' %}">Podcasts</a>
+	            </h1>
+		  </div><!--/.nav-collapse -->
+		</div>
         </div>
       </nav>
       
@@ -41,21 +43,23 @@
 	    </div>
 	   {% endblock header %}
 	<div>
-	<div>
+	<div class=container">
 	  {% block content %}
-	    <h2>Browse and listen to your favorite Python podcasts in one place.</h2>
-	    <h2>
-              Get the latest podcasts on:
-	      <h3>
-	        <ul>
-                  <li>'How to' Tutorials</li>
-	          <li>Latest Developments in Python</li>
-	          <li>Exciting projects</li>
-	        </ul>
-	      </h3>
-	      <h3>From world's most talented Python developers<h3>
+	    <div class="jumbotron">
+              <h2>Browse and listen to your favorite Python podcasts in one place.</h2>
+	      <h2>
+                Get the latest podcasts on:
+	        <h3>
+	          <ul>
+                    <li>'How to' Tutorials</li>
+	            <li>Latest Developments in Python</li>
+	            <li>Exciting projects</li>
+	          </ul>
+	        </h3>
+	        <h3>From world's most talented Python developers<h3>
 	      </h2>
-	  {% endblock content %}
+	    </div>
+	   {% endblock content %}
 	 </div>
        </div> <!-- /container -->
        <footer class="container-fluid">
