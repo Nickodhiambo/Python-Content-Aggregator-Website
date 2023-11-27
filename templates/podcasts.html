@@ -1,42 +1,39 @@
-{% load bootstrap3 %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% load static %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pyCasts!</title>
+    <title>PySodes</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{% static 'main.css' %}" />
-    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static '1-main.css' %}">
+    <!--<link rel="stylesheet" href="{% static 'main.css' %}">-->
   </head>
+
+  <header class="container group">
+    <section>
+        <h1 class="logo">
+            <a href="{% url 'episodes:index' %}">Pysodes</a>
+        </h1>
+    </section>
+    <h3 class="tagline">Latest Python Episodes</h3>
+    <nav class="nav primary-nav">
+        <ul>
+            <li><a href="{% url 'episodes:index' %}">Home</a></li><!--
+            --><li><a href="{% url 'episodes:podcasts' %}">Podcasts</a></li><!--
+            --><li><a href="{% url 'episodes:about' %}">About Us</a></li>
+        </ul>
+    </nav>
+</header>
   <body class="d-flex flex-column">
     
-    <header>
-      <nav class="navbar navbar-default navbar-static-top">
-        <div class="row">
-          <div class="col text-center">
-            <img src="{% static 'imgs/pycasts.png' %}" alt="pyCasts! Logo" id="site-logo" />
-          </div>
-	  <div class="nav navbar-nav navbar-right">
-            <button type="button" class="navbar-toggle collapsed"
-              data-toggle="collapse" data-target="#navbar"
-              aria-expanded="false" aria-controls="navbar">
-	    </button>
-	    <h1>
-              <a class="navbar-brand" href="{% url 'episodes:index' %}">Home</a>
-	      <a class="navbar-brand" href="{% url 'episodes:podcasts' %}">Podcasts</a>
-	    </h1>
-	  </div>
-        </div>
-      </nav>
-    </header>
+    
 
     <main class="container flex-grow-1">
       <div class="row">
@@ -67,18 +64,22 @@
       </div>
     </main>
 
-    <footer class="container-fluid">
-      <div class="row">
-        <div class="col text-center">
-          <img src="{% static 'imgs/python-powered.svg' %}" alt="Python Powered" height="50px" />
-        </div>
-      </div>
-    </footer>
+    
 
-    <script
+    <!--<script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
-    ></script>
+    ></script>-->
   </body>
+  <footer class="primary-footer container group">
+    <small>&copy; Pysodes</small>
+    <nav class="nav">
+        <ul>
+            <li><a href="{% url 'episodes:index' %}">Home</a></li><!--
+            --><li><a href="{% url 'episodes:podcasts' %}">Podcasts</a></li><!--
+            --><li><a href="{% url 'episodes:about' %}">About Us</a></li>
+        </ul>
+    </nav>
+</footer>
 </html>

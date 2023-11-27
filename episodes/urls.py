@@ -9,4 +9,7 @@ urlpatterns = [
 
         # Podcasts page
         path('podcasts/', views.PodcastsPageView.as_view(), name="podcasts"),
+
+        # About page
+        path('about/', views.about, name="about")
         ]

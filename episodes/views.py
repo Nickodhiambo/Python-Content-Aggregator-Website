@@ -9,9 +9,14 @@ def index(request):
     template_name = 'index.html'
     return render(request, template_name)
 
+def about(request):
+    """About Us page view"""
+    template_name = 'about.html'
+    return render(request, template_name)
+
 class PodcastsPageView(ListView):
     """Retrieves episodes from the database"""
-    template_name = 'episodes.html'
+    template_name = 'podcasts.html'
     model = Episode
 
     def get_context_data(self, **kwargs):

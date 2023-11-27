@@ -1,73 +1,65 @@
-{% load bootstrap3 %}
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <link rel="stylesheet" href="{% static 'main.css' %}" />
-
-    <title>Epysodes</title>
-
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-  </head>
-  
-  <body>
-    <!--static navbar-->
-      <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-		<div class="row">
-                  <div class="nav navbar-nav navbar-right">
-                    <button type="button" class="navbar-toggle collapsed"
-	              data-toggle="collapse" data-target="#navbar"
-	              aria-expanded="false" aria-controls="navbar">
-	            </button>
-		    <h1>
-                      <a class="navbar-brand" href="{% url 'episodes:index' %}">Home</a>
-	              <a class="navbar-brand" href="{% url 'episodes:podcasts' %}">Podcasts</a>
-	            </h1>
-		  </div><!--/.nav-collapse -->
-		</div>
-        </div>
-      </nav>
-      
-      <div class="container">
-        <div class="page-header">
-          {% block header %}
-	    <div class="jumbotron">  
-	      <h1>Listen to Python</h1>
-	    </div>
-	   {% endblock header %}
-	<div>
-	<div class=container">
-	  {% block content %}
-	    <div class="jumbotron">
-              <h2>Browse and listen to your favorite Python podcasts in one place.</h2>
-	      <h2>
-                Get the latest podcasts on:
-	        <h3>
-	          <ul>
-                    <li>'How to' Tutorials</li>
-	            <li>Latest Developments in Python</li>
-	            <li>Exciting projects</li>
-	          </ul>
-	        </h3>
-	        <h3>From world's most talented Python developers<h3>
-	      </h2>
-	    </div>
-	   {% endblock content %}
-	 </div>
-       </div> <!-- /container -->
-       <footer class="container-fluid">
-         <div class="row">
-           <div class="col text-center">
-             <img src="{% static 'imgs/python-powered.svg' %}" alt="Python Powered" height="50px" />
-	   </div>
-	 </div>
-       </footer>
-  </body>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PySodes</title>
+        <link rel="stylesheet", href="{% static '1-main.css' %}">
+        <link rel="stylesheet", href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
+    </head>
+    <body>
+        <header class="container group">
+            <section>
+                <h1 class="logo">
+                    <a href="{% url 'episodes:index' %}">Pysodes</a>
+                </h1>
+            </section>
+            <h3 class="tagline">Latest Python Episodes</h3>
+            <nav class="nav primary-nav">
+                <ul>
+                    <li><a href="{% url 'episodes:index' %}">Home</a></li><!--
+                    --><li><a href="{% url 'episodes:podcasts' %}">Podcasts</a></li><!--
+                    --><li><a href="{% url 'episodes:about' %}">About Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="intro container">
+            <h2>Informing the Next Generation of Python Developers</h2>
+            <p>Listen to Python podcasts from among the world's most talented Python programmers. Elavate your Python skills with hands-on projects.</p>
+            <a class="btn btn-alt" href="{% url 'episodes:podcasts' %}">Browse podcasts</a>
+        </section>
+        <section class="row">
+            <div class="grid">
+                <!--podcasts-->
+                <section class="teaser col-1-2">
+                    <h5>Podcasts</h5>
+                    <a href="{% url 'episodes:podcasts' %}">
+                        <img src="{% static 'imgs/lap.jpg' %}" alt="Mic image">
+                        <h3>Get Informative Podcasts</h3>
+                    </a>             
+                    <p>Listen to tens of podcasts every week. Tune in to new weekly episodes from your favorite mentors.</p>
+                </section><!--
+                About
+            --><section class="teaser col-1-2">
+                    <h5>About Us</h5>
+                    <a href="{% url 'episodes:about' %}">
+                        <img src="{% static 'imgs/about.jpg' %}" alt="studio image">
+                        <h3>Listen to Expert Devs From One Place!</h3>
+                    </a>
+                    <p>We gather educative Python podcasts in one place. No need to scour the web!</p>
+                </section>
+            </div>
+        </section>
+        <footer class="primary-footer container group">
+            <small>&copy; Pysodes</small>
+            <nav class="nav">
+                <ul>
+                    <li><a href="{% url 'episodes:index' %}">Home</a></li><!--
+                    --><li><a href="{% url 'episodes:podcasts' %}">Podcasts</a></li><!--
+                    --><li><a href="{% url 'episodes:about' %}">About Us</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
 </html>

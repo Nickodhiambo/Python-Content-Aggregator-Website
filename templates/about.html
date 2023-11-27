@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PySodes</title>
+        <link rel="stylesheet", href="{% static '1-main.css' %}">
+        <link rel="stylesheet", href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
+    </head>
+    <body>
+        <header class="primary-header container group">
+            <section>
+                <h1>
+                    <a class="logo" href="{% url 'episodes:index' %}">Pysodes</a>
+                </h1>
+            </section>
+            <h3 class="tagline">Latest Python episodes</h3>
+            <nav class="nav primary-nav">
+                <ul>
+                    <li><a href="{% url 'episodes:index' %}">Home</a></li><!--
+                    --><li><a href="{% url 'episodes:podcasts' %}">Podcasts</a></li><!--
+                    --><li><a href="{% url 'episodes:about' %}">About Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="row-alt">
+            <div class="interior container">
+                <h1>About Us</h1>
+                <p>PySodes purposes to avail the latest in the World of Python Programming through the power of podcasts. We source from leading Python developers straight into your PC. Visit us today to take your Python programming skills to the next level.</p>
+                <p>Currently, we only display content from RealPython and TalkPython podcasts. Plans are underway to hook other podcasts suggested by you!</p>
+                <p> What's more, we are planning to source Data Science courses too. Hung in there!</p>
+            </div>
+        </section>
+        <footer class="primary-footer container group">
+            <small>&copy; Pysodes</small>
+            <nav class="nav">
+                <ul>
+                    <li><a href="{% url 'episodes:index' %}">Home</a></li><!--
+                    --><li><a href="{% url 'episodes:podcasts' %}">Podcasts</a></li><!--
+                    --><li><a href="{% url 'episodes:about' %}">About Us</a></li>
+                </ul>
+            </nav>
+        </footer>
