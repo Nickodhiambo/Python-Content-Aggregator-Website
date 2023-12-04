@@ -10,7 +10,7 @@ class Episode(models.Model):
     link = models.URLField()
     image = models.URLField()
     podcast_name = models.CharField(max_length=200)
-    guid = models.CharField(max_length=50)
+    guid = models.CharField(max_length=200)
 
     def __str__(self):
         """Returns a string representation of podcast name and title"""

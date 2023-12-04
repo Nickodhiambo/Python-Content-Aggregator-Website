@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k#*0xhw6w7rh9!b$_xg@6bz7jaiyiwz%3^(7yg8c3e6j%ad_76'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '.nickoch.tech']
 
 
 # Application definition
@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'content_aggregator.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pysodes',
+        'USER': 'nick',
+        'PASSWORD': 'root',
+        'HOST':'localhost',
+        'PORT': '',
     }
 }
 
@@ -125,9 +129,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-        BASE_DIR/'static',
-        ]
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
