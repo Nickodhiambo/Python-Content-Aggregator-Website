@@ -11,5 +11,8 @@ urlpatterns = [
         path('podcasts/', views.PodcastsPageView.as_view(), name="podcasts"),
 
         # About page
-        path('about/', views.about, name="about")
+        path('about/', views.about, name="about"),
+
+        # Page Not Found
+        path('Page_Not_Found/', views.Not_Found_404, name="Not_Found")
         ]

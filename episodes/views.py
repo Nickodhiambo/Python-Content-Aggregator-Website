@@ -24,3 +24,8 @@ class PodcastsPageView(ListView):
         context = super().get_context_data(**kwargs)
         context['episodes'] = Episode.objects.filter().order_by('-pub_date')[:10]
         return (context)
+    
+def Not_Found_404(request):
+    """Retrieves page not found template"""
+    template_name = 'custom_404.html'
+    return (render, template_name)
