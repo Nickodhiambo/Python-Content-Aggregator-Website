@@ -155,4 +155,5 @@ LOGGING = {
 BOOTSTRAP3 = {
         'include_jquery': True,
         }
-        
+
+handler404 = 'episodes.views.Not_Found_404'

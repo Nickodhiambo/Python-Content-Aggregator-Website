@@ -28,4 +28,4 @@ class PodcastsPageView(ListView):
 def Not_Found_404(request):
     """Retrieves page not found template"""
     template_name = 'custom_404.html'
-    return (render, template_name)
+    return render(request, template_name, status=404)
