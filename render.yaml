@@ -9,13 +9,13 @@ services:
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn content_aggregator.wsgi:application"
- 
-envVars:
-  - key: DATABASE_URL
-    fromDatabase:
-      name: Pysodes
-      property: connectionString
-  - key: SECRET_KEY
-    generateValue: true
-  - key: WEB_CONCURRENCY
-    value: 4
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: Pysodes
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+
