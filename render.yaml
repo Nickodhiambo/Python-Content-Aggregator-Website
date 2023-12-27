@@ -16,6 +16,6 @@ envVars:
     name: Pysodes
     property: connectionString
   -key: SECRET_KEY
-   generateValue: true
+  generateValue: true
   -key: WEB_CONCURRENCY
-   value: 4
+  value: 4
