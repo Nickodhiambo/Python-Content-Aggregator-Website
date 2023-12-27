@@ -1,6 +1,6 @@
 databases:
-  -name: Python_Content_Aggregator_Site
-   databaseName: Pysodes
+  -name: Python-Content-Aggregator-Site
+  databaseName: Pysodes
    user: nick
 
 services:
