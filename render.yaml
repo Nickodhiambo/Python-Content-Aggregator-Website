@@ -1,21 +1,21 @@
 databases:
-  -name: Python-Content-Aggregator-Site
-  databaseName: Pysodes
-  user: nick
+  - name: Python-Content-Aggregator-Site
+    databaseName: Pysodes
+    user: nick
 
 services:
-  -type: web
-  name: Python_Content_Aggregator_Site
-  runtime: python
-  buildCommand: "./build.sh"
-  startCommand: "gunicorn content_aggregator.wsgi:application"
+  - type: web
+    name: Python_Content_Aggregator_Site
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn content_aggregator.wsgi:application"
  
 envVars:
-  -key: DATABASE_URL
-  fromDatabase:
-    name: Pysodes
-    property: connectionString
-  -key: SECRET_KEY
-  generateValue: true
-  -key: WEB_CONCURRENCY
-  value: 4
+  - key: DATABASE_URL
+    fromDatabase:
+      name: Pysodes
+      property: connectionString
+  - key: SECRET_KEY
+    generateValue: true
+  - key: WEB_CONCURRENCY
+    value: 4
