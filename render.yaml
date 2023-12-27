@@ -1,11 +1,11 @@
 databases:
-  -name: Python-Content-Aggregator-Site
+  -name: Python_Content_Aggregator_Site
    databaseName: Pysodes
    user: nick
 
 services:
   -type: web
-   name: Python-Content-Aggregator-Site
+   name: Python_Content_Aggregator_Site
    runtime: python
    buildCommand: "./build.sh"
    startCommand: "gunicorn content_aggregator.wsgi:application"
