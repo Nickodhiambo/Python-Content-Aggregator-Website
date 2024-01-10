@@ -14,5 +14,8 @@ urlpatterns = [
         path('about/', views.about, name="about"),
 
         # Page Not Found
-        path('Page_Not_Found/', views.Not_Found_404, name="Not_Found")
+        path('Page_Not_Found/', views.Not_Found_404, name="Not_Found"),
+
+        #index page
+        path('', views.index, name="root"),
         ]
